@@ -14,6 +14,7 @@
 		46B637722B61096600007917 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46B637712B61096600007917 /* Assets.xcassets */; };
 		46B637752B61096600007917 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46B637732B61096600007917 /* LaunchScreen.storyboard */; };
 		46B637782B61096600007917 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B637772B61096600007917 /* main.m */; };
+		BE9D4387EEB9E64D34A8A8B4 /* Pods_firebase_ios_reproduction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDC2F2326EF21B4F196D5EF /* Pods_firebase_ios_reproduction.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,9 @@
 		46B637742B61096600007917 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46B637762B61096600007917 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46B637772B61096600007917 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4ACA5702D0F4708BC0ECB952 /* Pods-firebase-ios-reproduction.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebase-ios-reproduction.release.xcconfig"; path = "Target Support Files/Pods-firebase-ios-reproduction/Pods-firebase-ios-reproduction.release.xcconfig"; sourceTree = "<group>"; };
+		4BDC2F2326EF21B4F196D5EF /* Pods_firebase_ios_reproduction.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firebase_ios_reproduction.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		58237684C04A6AB68C827DB4 /* Pods-firebase-ios-reproduction.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebase-ios-reproduction.debug.xcconfig"; path = "Target Support Files/Pods-firebase-ios-reproduction/Pods-firebase-ios-reproduction.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE9D4387EEB9E64D34A8A8B4 /* Pods_firebase_ios_reproduction.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +52,8 @@
 			children = (
 				46B637642B61096600007917 /* firebase-ios-reproduction */,
 				46B637632B61096600007917 /* Products */,
+				F822AFCC2000D049D1C0079F /* Pods */,
+				937105D34838BA235AD269B5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +83,24 @@
 			path = "firebase-ios-reproduction";
 			sourceTree = "<group>";
 		};
+		937105D34838BA235AD269B5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4BDC2F2326EF21B4F196D5EF /* Pods_firebase_ios_reproduction.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F822AFCC2000D049D1C0079F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				58237684C04A6AB68C827DB4 /* Pods-firebase-ios-reproduction.debug.xcconfig */,
+				4ACA5702D0F4708BC0ECB952 /* Pods-firebase-ios-reproduction.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,9 +108,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46B6377B2B61096600007917 /* Build configuration list for PBXNativeTarget "firebase-ios-reproduction" */;
 			buildPhases = (
+				0AD5DA030884BDBDAF66FCE3 /* [CP] Check Pods Manifest.lock */,
 				46B6375E2B61096600007917 /* Sources */,
 				46B6375F2B61096600007917 /* Frameworks */,
 				46B637602B61096600007917 /* Resources */,
+				49E597E7B46CF562844CF8F1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -140,6 +167,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0AD5DA030884BDBDAF66FCE3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-firebase-ios-reproduction-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		49E597E7B46CF562844CF8F1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-firebase-ios-reproduction/Pods-firebase-ios-reproduction-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-firebase-ios-reproduction/Pods-firebase-ios-reproduction-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-firebase-ios-reproduction/Pods-firebase-ios-reproduction-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		46B6375E2B61096600007917 /* Sources */ = {
@@ -293,6 +362,7 @@
 		};
 		46B6377C2B61096600007917 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58237684C04A6AB68C827DB4 /* Pods-firebase-ios-reproduction.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -320,6 +390,7 @@
 		};
 		46B6377D2B61096600007917 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4ACA5702D0F4708BC0ECB952 /* Pods-firebase-ios-reproduction.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
