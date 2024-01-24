@@ -8,4 +8,6 @@ target 'firebase-ios-reproduction' do
   # Pods for firebase-ios-reproduction
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
+
 end
