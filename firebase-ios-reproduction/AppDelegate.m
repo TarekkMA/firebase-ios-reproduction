@@ -6,6 +6,8 @@
 //
 
 #import "AppDelegate.h"
+#import <GoogleSignIn/GoogleSignIn.h>
+@import FirebaseCore;
 
 @interface AppDelegate ()
 
@@ -16,6 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Override point for customization after application launch.
+  [FIRApp configure];
   return YES;
 }
 
@@ -29,6 +32,11 @@
   return [[UISceneConfiguration alloc] initWithName:@"Default Configuration" sessionRole:connectingSceneSession.role];
 }
 
+- (BOOL)application:(nonnull UIApplication *)application
+            openURL:(nonnull NSURL *)url
+            options:(nonnull NSDictionary<NSString *, id> *)options {
+  return [[GIDSignIn sharedInstance] handleURL:url];
+}
 
 - (void)application:(UIApplication *)application didDiscardSceneSessions:(NSSet<UISceneSession *> *)sceneSessions {
   // Called when the user discards a scene session.
